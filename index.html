@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapStyle | Encuentra tu estilo de gorra</title>
+    
+    <!-- Meta SEO -->
+    <meta name="description" content="Descarga gratis nuestra guía exclusiva con estilos de gorras premium que están marcando tendencia en la cultura urbana.">
+    
+    <style>
+        /* =========================================
+           CAPSTYLE LANDING PAGE STYLES
+           ========================================= */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap');
+        
+        :root {
+            /* Color Palette */
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --accent-yellow: #FFC107;
+            --accent-yellow-hover: #ffcf33;
+            --font-primary: 'Outfit', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent-yellow); }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at top right, rgba(255, 193, 7, 0.05), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.02), transparent 30%);
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            z-index: 2;
+        }
+
+        .logo-text {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 900;
+            font-style: italic;
+            margin-bottom: 30px;
+            display: inline-block;
+            letter-spacing: -1px;
+        }
+        .logo-text .highlight { color: var(--accent-yellow); }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--accent-yellow);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: clamp(0.85rem, 2vw, 1rem);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #ffffff, #a0a0a0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-wrap: balance;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--text-muted);
+            margin: 0 auto 40px;
+            max-width: 650px;
+            text-wrap: balance;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent-yellow);
+            color: #000;
+            font-weight: 800;
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(255, 193, 7, 0.2);
+            width: fit-content;
+            max-width: 100%;
+        }
+
+        .cta-button:hover {
+            background: var(--accent-yellow-hover);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 193, 7, 0.3);
+        }
+
+        /* =========================================
+           BENEFITS SECTION
+           ========================================= */
+        .benefits {
+            padding: 100px 0;
+            background-color: #0d0d0d;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 60px;
+            font-weight: 800;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            padding: 40px 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.03);
+            text-align: center;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent-yellow), transparent);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            background: #1a1a1a;
+            border-color: rgba(255, 193, 7, 0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .benefit-card:hover::before { opacity: 1; }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        /* =========================================
+           LEAD MAGNET FORM
+           ========================================= */
+        .lead-magnet {
+            padding: 100px 0 120px;
+            background: radial-gradient(circle at center, #111 0%, #0a0a0a 100%);
+        }
+
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: clamp(30px, 6vw, 50px);
+            border-radius: 24px;
+            border-top: 4px solid var(--accent-yellow);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .form-wrapper h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 4vw, 2.2rem);
+            margin-bottom: 10px;
+        }
+
+        .form-wrapper p {
+            text-align: center;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            font-size: 1.05rem;
+        }
+
+        .input-group { margin-bottom: 24px; }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 16px;
+            background: #0a0a0a;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-family: var(--font-primary);
+            font-size: 1.05rem;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--accent-yellow);
+            background: #111;
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent-yellow);
+            color: #000;
+            border: none;
+            padding: 20px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .submit-btn:hover {
+            background: var(--accent-yellow-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 193, 7, 0.25);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            background: #050505;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           RESPONSIVE FIXES
+           ========================================= */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0; min-height: auto; }
+            .benefits { padding: 80px 0; }
+            .lead-magnet { padding: 80px 0 100px; }
+        }
+
+        @media (max-width: 480px) {
+            .cta-button { width: 100%; }
+        }
+
+        /* =========================================
+           ANIMATED BACKGROUND
+           ========================================= */
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: var(--bg-dark);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.4;
+            animation: float 20s infinite ease-in-out alternate;
+        }
+
+        .blob-1 {
+            width: 500px; height: 500px;
+            background: rgba(255, 193, 7, 0.15); /* Yellow glow */
+            top: -20%; left: -10%;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 600px; height: 600px;
+            background: rgba(255, 255, 255, 0.05); /* White/grey glow */
+            bottom: -20%; right: -10%;
+            animation-delay: -5s;
+        }
+
+        .blob-3 {
+            width: 400px; height: 400px;
+            background: rgba(255, 193, 7, 0.08); /* Dimmer yellow glow */
+            top: 40%; left: 60%;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0, 0) scale(1); }
+        }
+
+        /* =========================================
+           MODAL STYLES
+           ========================================= */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            transform: translateY(20px) scale(0.95);
+            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 193, 7, 0.1);
+            border-top-color: var(--accent-yellow);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .modal-text {
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            font-size: 1rem;
+        }
+
+        .modal-close-btn {
+            background: #222;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+            display: none;
+            margin: 0 auto;
+            font-size: 1rem;
+        }
+
+        .modal-close-btn:hover {
+            background: #333;
+            color: var(--accent-yellow);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ANIMATED BACKGROUND -->
+    <div class="animated-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="logo-text">Cap<span class="highlight">Style</span></div><br>
+                <div class="badge">🔥 Guía de Headwear 2024</div>
+                <h1>Encuentra la gorra perfecta que define tu identidad.</h1>
+                <p>Descarga gratis nuestra guía exclusiva con 7 estilos de gorras premium que están marcando tendencia en la cultura urbana y streetwear.</p>
+                <a href="#lead-form" class="cta-button">📥 QUIERO LA GUÍA GRATIS</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- BENEFITS SECTION -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">¿Qué encontrarás en la guía?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🧢</div>
+                    <h3>Estilos en Tendencia</h3>
+                    <p>Los modelos de gorras más actuales (snapback, trucker, dad hats) dominando la escena streetwear.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🧵</div>
+                    <h3>Materiales Premium</h3>
+                    <p>Descubre las telas, costuras y acabados clave que distinguen a una gorra de alta calidad.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">👤</div>
+                    <h3>Ajuste Perfecto</h3>
+                    <p>Recomendaciones exactas de coronas y viseras según la forma de tu rostro.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">✨</div>
+                    <h3>Customización</h3>
+                    <p>Inspiración para bordados 3D, parches y diseños exclusivos para que personalices tu gorra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEAD MAGNET FORM -->
+    <section id="lead-form" class="lead-magnet">
+        <div class="container">
+            <div class="form-wrapper">
+                <h2>Obtén tu guía de gorras</h2>
+                <p>Completa el formulario para recibir el PDF con la guía de estilos directamente en tu correo y WhatsApp.</p>
+                <form id="leadForm">
+                    <div class="input-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" placeholder="Ej: Carlos Avila" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" placeholder="tu@email.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="whatsapp">Número de WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="+1 234 567 8900" required>
+                    </div>
+                    <button type="submit" class="submit-btn">DESCARGAR GUÍA GRATIS</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 CapStyle. Tu gorra, tu estilo.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL DE DESCARGA -->
+    <div class="modal-overlay" id="downloadModal">
+        <div class="modal-content">
+            <!-- Estado 1: Cargando -->
+            <div id="modalStateLoading">
+                <div class="spinner"></div>
+                <h3 class="modal-title">Preparando tu guía...</h3>
+                <p class="modal-text">Estamos generando el archivo con los 7 estilos premium.</p>
+            </div>
+            
+            <!-- Estado 2: Éxito -->
+            <div id="modalStateSuccess" style="display: none;">
+                <div class="modal-icon">✅</div>
+                <h3 class="modal-title">¡Guía lista!</h3>
+                <p class="modal-text">Tu descarga comenzará en breve. Revisa tu carpeta de descargas.</p>
+                <button class="modal-close-btn" id="closeModalBtn" type="button">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE DESCARGA Y MODAL -->
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita que la página se recargue
+            
+            const modal = document.getElementById('downloadModal');
+            const loadingState = document.getElementById('modalStateLoading');
+            const successState = document.getElementById('modalStateSuccess');
+            const closeBtn = document.getElementById('closeModalBtn');
+            
+            // 1. Mostrar modal en estado de carga
+            modal.classList.add('active');
+            loadingState.style.display = 'block';
+            successState.style.display = 'none';
+            closeBtn.style.display = 'none';
+
+            // 2. Simular un tiempo de procesamiento (2 segundos)
+            setTimeout(() => {
+                loadingState.style.display = 'none';
+                successState.style.display = 'block';
+                closeBtn.style.display = 'block';
+                
+                // 3. Generar y forzar la descarga del archivo
+                triggerDownload();
+            }, 2000);
+        });
+
+        // Botón para cerrar el modal
+        document.getElementById('closeModalBtn').addEventListener('click', function() {
+            document.getElementById('downloadModal').classList.remove('active');
+            document.getElementById('leadForm').reset(); // Limpiar el formulario
+        });
+
+        // Función para forzar descarga de un PDF/TXT simulado
+        function triggerDownload() {
+            // Contenido de la guía (texto)
+            const contenido = "¡Felicidades! Has descargado la Guía de Headwear de CapStyle.\n\nEn tu proyecto real, aquí puedes enlazar un archivo PDF verdadero alojado en tu GitHub.\n\n7 Estilos:\n1. Snapback Clásica\n2. Trucker Cap\n3. Dad Hat\n4. 5-Panel\n5. Bucket Hat\n6. Fitted\n7. Beanie";
+            
+            // Creamos un archivo Blob (puede ser text/plain o application/pdf si tuvieras bytes de PDF)
+            const blob = new Blob([contenido], { type: "text/plain" });
+            const url = window.URL.createObjectURL(blob);
+            
+            // Creamos un link invisible, lo añadimos al DOM, le hacemos clic y lo borramos
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Guia_CapStyle_2024.txt"; 
+            document.body.appendChild(a);
+            a.click();
+            
+            // Limpieza de memoria
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+    </script>
+
+</body>
+</html>
